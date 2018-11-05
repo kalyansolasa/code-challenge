@@ -1,5 +1,5 @@
 export APP_SETTINGS="config.DevelopmentConfig"
-export GOOGLE_APPLICATION_CREDENTIALS='codechallenge-02f1bcf4bd4f.json'
-export PROJECTID='codechallenge-221514'
+export GOOGLE_APPLICATION_CREDENTIALS='first-d1903aebc08d.json'
+export PROJECTID='first-221210'
 
 python app.py

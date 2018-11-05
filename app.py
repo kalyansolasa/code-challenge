@@ -1,7 +1,8 @@
 import os
 from flask import Flask
-from flask import  Blueprint, request, jsonify
+from flask import  Blueprint, request, jsonify, Response
 from datastore import Datastore
+import json
 
 
 app = Flask(__name__)
@@ -20,8 +21,11 @@ def hello_name(name):
 @app.route('/listusers')
 def list_users():
     ds = Datastore()
-    print(ds.list_users('user'))
-    return 'iam working'
+    res = []
+    users = ds.list_users('test')
+    for user in users:
+        res.append(dict(user))
+    return Response(json.dumps(res),  mimetype='application/json')
 
 
 
