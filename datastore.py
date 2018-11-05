@@ -21,6 +21,7 @@ class Datastore(object):
         return user.key
 
     def list_users(self, dataset, filters=[]):
+        print(filters)
         qry = self.client.query(kind=dataset, filters=filters)
         return list(qry.fetch())
 
